@@ -1,0 +1,124 @@
+@mixin html{
+height: 100%;
+background: url('http:thecodeplayer.com/uploads/media/gs.png');
+background: $linear-gradient;
+}
+
+@mixin formulario
+{
+	width:400px;
+	margin:50px auto;
+	text-align:center;
+	position:relative;
+}
+
+
+@mixin campo-preenchimento($borda-arrendondada:3px,$sombra-caixa:0 0 15px 1px rgba(0,0,0,0.4), $padding:20px 30px){
+	background:white;
+	border: 0 none;
+	border-radius:$borda-arrendondada;
+	box-shadow:$sombra-caixa;
+	padding:$padding;
+	box-shadow: border-box;
+	width: 80%;
+	margin:0 10%;
+	position:absolute;
+}
+
+@mixin erros
+{
+	width:$largura;
+	padding:$preenchimento;
+	background:$cor-pano-fundo;
+	margin:20px auto 0 auto;
+	border:1px solid rgba(222,239,10,0.9);
+}
+
+@mixin campo-preenchimento-escondido{
+	display:none;
+}
+
+@mixin texto-area($borda-arrendondada:3px,$margem-inferior:10px,$tamanho-fonte:13px,$cores:#2C3E50){
+	padding:15px;
+	border:1px solid #ccc;
+	border-radius:$borda-arrendondada;
+	margin-bottom:$margem-inferior;
+	width: 100%;
+	box-sizing: border-box;
+	color:$cores;
+	font-size:$tamanho-fonte;
+
+}
+
+
+@mixin botao ($borda-arrendondada:1px,$margem-botao:10px 5px,$preenchimento:10px 5px){
+	width: 100px;
+	background:#27AE60;
+	font-weight:bold;
+	color:white;
+	border: 0 none;
+	border-radius:$borda-arrendondada;
+	cursor:pointer;
+	padding: $preenchimento;
+	margin:$margem-botao;
+}
+
+@mixin titulo($cor-titulo:#2C3E50,$margem-titulo:10px){
+	font-size: 15px;
+	text-transform:uppercase;
+	color:$cor-titulo;
+	margin-bottom:$margem-titulo;
+
+}
+
+@mixin subtitulo($cor-subtitulo:#666,$margem-inferior-subitulo:20px){
+font-size:13px;
+font-weight:normal;
+color:$cor-subtitulo;
+margin-bottom:$margem-inferior-subitulo;
+}
+
+
+@mixin barraprogresso ($margem-bottom:30px)
+{
+	counter-reset:step;
+	overflow:hidden;
+	margin-bottom:$margem-bottom;
+}
+
+@mixin barraprogresso-lista($lista-estilo-tipo:none,$cor-barraprogresso-lista:white){
+list-style-type:$lista-estilo-tipo;
+color:$cor-barraprogresso-lista;
+text-transform:uppercase;
+font-size:9px;
+width:33.33%;
+float:left;
+position:relative;
+
+}
+
+
+@mixin barraprogresso-lista-antes($pano-fundo:#27AE60,$largura-barraprogresso:20px,$linha-altura:20px,$borda:3px){
+content:counter(step);
+counter-increment:step;
+width: $largura-barraprogresso;
+line-height:$linha-altura;
+display:block;
+font-size:10px;
+color:#333;
+background:white;
+border-radius:$borda;
+margin:0 auto 5px auto;
+}
+
+@mixin barraprogresso 
+{
+content:'';
+width:100%;
+height:2px;
+background:white;
+position:absolute;
+left: -50%;
+top:9px;
+z-index:-1;
+}

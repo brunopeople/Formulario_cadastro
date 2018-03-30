@@ -1,0 +1,85 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+@import "partials/mixins";
+@import "partials/variaveis";
+
+
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+html{
+	@include html;
+}
+
+.erros
+{
+	@include erros;
+}
+
+body{
+font-family:$fonte;
+}
+
+
+#msform{
+	@include formulario;
+}
+
+#msform fieldset{
+	@include campo-preenchimento;
+}
+
+#msform fieldset:not(:first-of-type){
+	display:none;
+}
+
+#msform input, #msform textarea{
+	@include texto-area;
+}
+
+#msform .action-button{
+	@include botao;
+}
+
+#msform action.action-button:hover ,#msform ,action-button:focus{
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+.fs-title{
+	@include titulo;
+}
+
+.fs-subtitle{
+	@include subtitulo;
+}
+
+#progressbar{
+	@include barraprogresso;
+}
+
+#progressbar li {
+@include barraprogresso-lista;
+}
+
+
+#progressbar li:before{
+	@include barraprogresso-lista-antes;
+}
+
+#progressbar li:after{
+@include barraprogresso-lista-depois;
+}
+
+#progressbar li:first-child:after{
+content:none;
+}
+
+
+#progressbar li.active:before,#progressbar li.active:after{
+background: $background-botao;
+color:white;
+}
